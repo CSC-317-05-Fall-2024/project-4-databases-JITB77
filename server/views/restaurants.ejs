@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    
+    <header></header>
+    <nav></nav>
+
+    <div class="main-rest">
+        <div class="main-rest-container">
+            <% restaurants.forEach(restaurant => { %>
+                <div class="main-rest-item" id="card-<%= restaurant.id %>">
+                    <a href="/restaurants/<%= restaurant.id %>" class="restaurant-link"> 
+                        <img src="<%= restaurant.photo %>" alt="<%= restaurant.name %>" class="restaurant-image" data-id="<%= restaurant.id %>">
+                        <p><%= restaurant.name %></p>
+                        <p><%= restaurant.adress %></p>
+                        <p><%= restaurant.phone %></p>
+                    </a>
+                    <button class="delete-btn" data-id="<%= restaurant.id %>">X</button>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="/public/scripts/header.js"></script>
+    <script src="/public/scripts/restaurantCards.js"></script>
+
+</body>
+</html>
