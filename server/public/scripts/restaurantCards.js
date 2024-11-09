@@ -58,7 +58,6 @@ const fetchAndRenderRestaurants = async () => {
     try {
         const response = await fetch('/api/restaurants');
         const restaurants = await response.json();
-        console.log('Fetched restaurants:', restaurants);
         renderRestaurantCards(restaurants); // Render the updated list
     } catch (error) {
         console.error('Error fetching restaurants:', error);

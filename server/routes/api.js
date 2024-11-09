@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/restaurants', async (req, res) => {
     try {
         const restaurants = await getRestaurants(); // Get data from DB
-        console.log('Restaurants data:', restaurants); // Log the data to the server console
         res.json(restaurants); // Return the list of restaurants as JSON
     } catch (error) {
         console.error(error);
